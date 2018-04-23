@@ -1,11 +1,138 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://use.fontawesome.com/a7ec7986bf.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='style.css' >
+
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+<!-- navbar-light bg-light -->
+<div class="container-fluid">
+
+<!-- Barre navigation -->
+    <nav class="navbar navbar-custom navbar-expand-lg ">
+    <a class="navbar-brand" href="#">E-Sport Bet</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Comment ça marche <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">S'inscrire</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Se connecter</a>
+        </li>
+      </ul>
+    </div>
+    </nav>
+
+  <!-- Barre News -->
+    <div class="input-group input-group-custom input-group-sm">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-sm">News :</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+    </div>
+
+    <!-- Banniere -->
+    <div class="banner">
+      <h2>E-Sport Bet, la meilleure façon de jouer et parier en ligne entre amis</h2>
+      <button type="button" id="btn-banner" class="btn btn-sample btn-primary btn-lg">Lances un défi maintenant</button>
+      <!-- <div id="back-black">
+      </div> -->
+    </div>
+
+    <div class="concept">
+      <h2>Comment ça marche</h2>
+      <div id="concept-items">
+        <div class="concept-item">
+          <img class="picto" src="\icons\gamepad.svg">
+          <p>Choisis ton jeu</p>
+        </div>
+        <div class="concept-item">
+          <img class="picto" src="\icons\friends.svg">
+          <p>Défies un ami ou un adversaire connecté</p>
+        </div>
+        <div class="concept-item">
+          <img class="picto" src="\icons\coin.svg">
+          <p>Paries la somme que tu souhaites</p>
+        </div>
+        <div class="concept-item">
+          <img class="picto" src="\icons\flags.svg">
+          <p>A toi de jouer</p>
+        </div>
+      </div>
+      <div id="btn-concept">
+        <button type="button"  class="btn btn-sample btn-primary btn-lg">Lances un défi maintenant</button>
+      </div>
+    </div>
+
+<!-- Retrouvez-nous -->
+
+    <div class="contact" >
+      <h2>Retrouvez-nous</h2>
+      <div class="row offset-2">
+        <div class="col-6" id="form-contact">
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlInput1"> Adresse Email</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Objet</label>
+              <select class="form-control" id="exampleFormControlSelect1"></select>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Votre message</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="col-6 map">
+          <img src="\images\fifa18.jpg" id="map">
+        </div>
+      </div>
+      <div class="socials">
+        <img src="\icons\facebook.svg" class="social">
+        <img src="\icons\instagram.svg" class="social">
+        <img src="\icons\snapchat.svg" class="social">
+      </div>
+    </div>
+
+    <!-- Footer -->
+
+      <div class="footer">
+        <div>
+          <p>E-Sport Bet</p>
+        </div>
+        <div>
+          <p>CGU</p>
+          <p>Mentions légales</p>
+        </div>
+        <div>
+          <p>A propos</p>
+          <p>S'inscrire</p>
+          <p>Se connecter</p>
+        </div>
+      </div>
+      <p>E-Sport Bet copyright 2018</p>
+      <a href="picto.html">voir les pictos</a>
+
+
+</div>
+
+
+
   </body>
 </html>

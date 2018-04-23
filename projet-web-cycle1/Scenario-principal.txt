@@ -1,0 +1,26 @@
+
+1/ J'arrive sur la Home Page : je peux lancer un pari directement à partir de là.
+
+2/ Home Page : Je choisis le jeu et un joueur proposé dans la liste.
+
+3/ Je m'inscris ou je me connecte.
+
+4/ Le site envoie un mail à l'autre joueur pour accepter ou refuser le challenge.
+   J'attends sa réponse qui m'arrivera par mail ET notification.
+
+5/ Lorsque le joueur accepte, il atterit sur la page "Mise du pari".
+   Quand je clique sur le lien dans le mail ou clique "OK" dans la notif, j'atteris
+   sur la page "Mise du pari".
+
+6/ Quand je clique sur "Miser", je suis redirigé vers un écran d'attente avec
+   [Démo vidéo du jeu, ...]
+   Je clique sur continuer quand la partie est terminée.
+
+7/ J'atteris sur la page "Fin de partie".
+   Je marque le score, j'envoie la photo du score. (demander à Noel cmt)
+   Je clique sur continuer pour avoi le récapitulatif des gains/pertes.
+
+8/ Page récapitulatif du challenge et de l'état de mon compte 
+   avec un lien pour payer si je perds et un lien pour déclencher la demande de 
+   virement.
+   

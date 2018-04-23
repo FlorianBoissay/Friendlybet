@@ -1,0 +1,173 @@
+/* Homepage */
+
+/* Barre navigation */
+.navbar-custom{
+  background-color: #0072bb;
+  color: #FFFFFF;
+}
+.navbar-brand{
+  color: #FFFFFF;
+
+}
+.navbar-brand:hover{
+  color : #FFFFFF;
+  font-weight: bolder;
+}
+.nav-link{
+    color: #FFFFFF;
+}
+.nav-link:hover{
+  color: #FFFFFF;
+  font-weight: bolder;
+}
+
+/* Barre News */
+.input-group-custom {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.form-control{
+  border-color: #b3001b;
+}
+.input-group-text{
+  background-color: #b3001b;
+  color: white;
+  border-color: #b3001b;
+  border-top-left-radius: 0rem;
+  border-top-right-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+  border-bottom-left-radius: 0rem;
+}
+ /** Bannière **/
+.banner{
+  background-image: url("/images/fifa18-back.jpg");
+  background-size: cover;
+  height: 100vh;
+  color: #FFFFFF;
+}
+#back-black{
+  background-color: black;
+  opacity: 0.6;
+  background-size: cover;
+  height: 100vh;
+}
+
+   /*** Customisation du bouton bootstrap ***/
+.btn-sample {
+  color: #ffffff;
+  background-color: #B3001B;
+  border-color: #B3001B;
+}
+
+.btn-sample:hover,
+.btn-sample:focus,
+.btn-sample:active,
+.btn-sample.active,
+.open .dropdown-toggle.btn-sample {
+  color: #ffffff;
+  background-color: #b3001b;
+  border-color: #B3001B;
+}
+
+.btn-sample:active,
+.btn-sample.active,
+.open .dropdown-toggle.btn-sample {
+  background-image: none;
+}
+
+.btn-sample.disabled,
+.btn-sample[disabled],
+fieldset[disabled] .btn-sample,
+.btn-sample.disabled:hover,
+.btn-sample[disabled]:hover,
+fieldset[disabled] .btn-sample:hover,
+.btn-sample.disabled:focus,
+.btn-sample[disabled]:focus,
+fieldset[disabled] .btn-sample:focus,
+.btn-sample.disabled:active,
+.btn-sample[disabled]:active,
+fieldset[disabled] .btn-sample:active,
+.btn-sample.disabled.active,
+.btn-sample[disabled].active,
+fieldset[disabled] .btn-sample.active {
+  background-color: #B3001B;
+  border-color: #B3001B;
+}
+
+.btn-sample .badge {
+  color: #B3001B;
+  background-color: #ffffff;
+}
+   /*** Fin Customisation bouton bootstrap ***/
+
+.banner{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.banner h2{
+-webkit-text-stroke: 1px grey;
+margin-bottom: 500px;
+opacity: 1;
+}
+#btn-banner{
+  margin-bottom: 0px;
+  opacity: 1;
+}
+
+.picto{
+  width: 128px;
+}
+
+/**** Concept ****/
+.concept{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#concept-items{
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+  display: flex ;
+  justify-content: space-around;
+  /* align-items: center; */
+}
+
+
+/**** Contact ****/
+
+.contact{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* align-items: center; */
+}
+.contact h2 {
+  text-align: center;
+}
+.socials{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.social{
+  width: 100px;
+}
+
+/*** Footer ***/
+.footer{
+  height: 30vh;
+  background-color: #0072bb;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

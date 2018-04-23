@@ -1,0 +1,30 @@
+Pages communes :
+
+profil : user
+mail : mail
+password : password
+déconnexion : logout
+accueil/home : homepage
+continuer : next
+
+Home : 
+
+news/actus : rss
+lancer un défi : challenge/trophy
+choix du jeu : gamepad
+joueur adversaire : add-user
+
+Pari :
+
+montant du pari : token
+sommes
+btn miser : coin ou coins
+
+Résultats:
+
+récap
+terminer : flag
+
+Réseaux sociaux:
+
+
