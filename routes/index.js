@@ -18,4 +18,7 @@ router.get('/connexion', function(req, res, next) {
   res.render('connexion')
 });
 
+router.get('/envoiphoto', function(req, res, next) {
+  res.render('envoiphoto')
+});
 module.exports = router;

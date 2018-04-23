@@ -4,6 +4,7 @@
 .navbar-custom{
   background-color: #0072bb;
   color: #FFFFFF;
+  display: flex;
 }
 .navbar-brand{
   color: #FFFFFF;
@@ -170,4 +171,12 @@ opacity: 1;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.pictonavbar {
+  width: 20px;
+}
+
+.collapse {
+  justify-content: flex-end;
 }
