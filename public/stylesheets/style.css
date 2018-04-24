@@ -4,6 +4,7 @@
 .navbar-custom{
   background-color: #0072bb;
   color: #FFFFFF;
+  display: flex;
 }
 .navbar-brand{
   color: #FFFFFF;
