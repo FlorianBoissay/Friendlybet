@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://use.fontawesome.com/a7ec7986bf.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+
+<!-- barre de navigation -->
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><%%></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#"><img src="/icons/user.svg" id="picto-user"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Déconnexion</a>
+        </li>
+      </ul>
+
+    </div>
+    <br>
+<!-- contenu Dashboard -->
+    <div id="main-dashboard">
+        <h3>Bienvenue <%%>, commencez à jouer et parier avec vos amis</h3><br>
+        <div class="container">
+          <div class="row">
+
+            <div class="row col-6" id="games">
+                <!-- La boucle pour chaque jeu -->
+                <!--
+                <%
+                for (var i=0; i<dataGame.length; i++) {
+                %>
+                  <div class="game-card col-6">
+                    <div class="card text-center" >
+                      <img class="card-img-top" src="<%=dataGame[i].url%>" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title"><%=dataGame[i].name%></h5>
+
+                        <form action="/add-game" method="POST">
+                          <input type="hidden" name="url" value="<%=dataGame[i].url%>">
+                          <input type="hidden" name="name" value="<%=dataGame[i].name%>">
+                          <button class="btn btn-danger">Sélectionner</button>
+                        </form>
+
+                      </div>
+                    </div>
+                  </div>
+                <%
+                }
+                %>
+              -->
+                <div class="game-card col-6">
+                  <div class="card text-center" >
+                    <img class="card-img-top" src="/images/fifa18-back.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">FIFA 18</h5>
+                      <a href="#" class="btn btn-danger">Sélectionner</a> <!-- Créer un form pour le bouton -->
+                    </div>
+                  </div>
+                </div>
+
+                <div class="game-card col-6">
+                  <div class="card text-center" >
+                    <img class="card-img-top" src="/images/callofduty-back.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">CALL OF DUTY</h5>
+                      <a href="#" class="btn btn-danger">Sélectionner</a> <!-- Créer un form pour le bouton -->
+                    </div>
+                  </div>
+                </div>
+
+                <div class="game-card col-6">
+                  <div class="card text-center" >
+                    <img class="card-img-top" src="/images/callofduty-back.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">CALL OF DUTY</h5>
+                      <a href="#" class="btn btn-danger">Sélectionner</a> <!-- Créer un form pour le bouton -->
+                    </div>
+                  </div>
+                </div>
+
+                <div class="game-card col-6">
+                  <div class="card text-center" >
+                    <img class="card-img-top" src="/images/fifa18-back.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">FIFA 18</h5>
+                      <a href="#" class="btn btn-danger">Sélectionner</a> <!-- Créer un form pour le bouton -->
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+
+            <div class="col-6" id="players">
+              <!-- La boucle pour chaque joueur-->
+            <!--
+            <%
+            for(var i=0; i<dataPlayer.length; i++) {
+            %>
+
+              <div class="list-group text-center offset-3 col-6" >
+
+                <form action="/add-player" method="POST">
+                  <input type="hidden" name="pseudo" value="<%=dataPlayer[i].pseudo%>">
+                  <button type="button" class="list-group-item list-group-item-action"><%=dataPlayer[i].pseudo%></button>
+                </form>
+
+                <p>OU</p><br>
+                <form action="/add-friend" method="POST"> <!--Méthode GET ou POST pour inviter des amis? Où afficher les amis ?--> <!--
+                  <input type="hidden" name="" value="">
+                  <button type="button" id="btn-banner" class="btn btn-sample btn-primary btn-lg">Inviter des amis</button>
+                </form>
+
+              </div>
+            <%
+            }
+            %>
+          -->
+
+
+
+              <div class="list-group text-center offset-3 col-6" >
+                <button type="button" class="list-group-item list-group-item-action active">
+                  Baptiste69
+                </button>
+                <button type="button" class="list-group-item list-group-item-action">joueur 2</button>
+                <button type="button" class="list-group-item list-group-item-action">joueur 3</button>
+                <button type="button" class="list-group-item list-group-item-action">joueur 4</button>
+                <button type="button" class="list-group-item list-group-item-action">joueur 5</button><br>
+                <p>OU</p><br>
+                <button type="button" id="btn-banner" class="btn btn-sample btn-primary btn-lg">Inviter des amis</button>
+              </div>
+          </div>
+
+          </div>
+        </div>
+
+      </div>
+
+
+
+  </body>
+</html>
