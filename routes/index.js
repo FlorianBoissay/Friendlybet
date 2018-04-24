@@ -18,7 +18,6 @@ router.get('/connexion', function(req, res, next) {
   res.render('connexion')
 });
 
-<<<<<<< HEAD
 /*ATTENTE page. */
 router.get('/attente', function(req, res, next) {
   res.render('attente')
@@ -29,7 +28,6 @@ router.get('/partie', function(req, res, next) {
   res.render('partie')
 });
 
-=======
 router.get('/envoiphoto', function(req, res, next) {
   res.render('envoiphoto')
 });
@@ -53,6 +51,5 @@ router.post('/upload', function(req, res) {
     res.send('File uploaded!');
   });
 });
->>>>>>> 07faf04f4ea6149d57a9b70c40e02bb42d44685f
 
 module.exports = router;
