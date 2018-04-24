@@ -193,7 +193,7 @@ nav {
 
 }
 
-.row {
+.divphoto {
   text-align: center;
   justify-content: space-between;
   margin-top: 150px;
@@ -257,4 +257,68 @@ nav {
   border: 1px #468CC8 solid;
   padding: 5px 20px 5px 20px;
   color: #468CC8;
+}
+
+/* Récapitulatif résultat */
+
+#btnrecap {
+  margin-left: 590px;
+  margin-bottom: 100px;
+  margin-top: 150px;
+}
+
+#jeurecap {
+  border: 1px #0072bb solid;
+  padding: 5px;
+  font-size: 30px;
+  color: #FFFFFF;
+  background-color: #0072bb;
+  border-radius: 10px;
+  margin-right: 200px;
+  margin-left: 400px;
+}
+
+#consolerecap {
+  border: 1px #0072bb solid;
+  padding: 5px;
+  font-size: 30px;
+  margin-right: 400px;
+  color: #FFFFFF;
+  background-color: #0072bb;
+  border-radius: 10px;
+}
+
+#recap {
+  color: #b3001b;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.userrecap {
+  background-color: #E8EAF6;
+  font-size: 30px;
+  padding: 15px 100px 15px 100px;
+  margin-right: 50px;
+}
+
+.gainrecap {
+  margin: 10px;
+  font-size: 60px;
+  border: 1px #468CC8 solid;
+  padding: 5px 20px 5px 20px;
+  color: #468CC8;
+}
+
+.deviserecap {
+  font-size: 60px;
+  color: #468CC8;
+  padding-top: 15px;
+}
+
+.divrecap {
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 75px;
+  margin-left: 400px;
 }

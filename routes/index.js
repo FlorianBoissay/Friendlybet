@@ -22,6 +22,10 @@ router.get('/envoiphoto', function(req, res, next) {
   res.render('envoiphoto')
 });
 
+router.get('/recap', function(req, res, next) {
+  res.render('recap')
+});
+
 router.post('/upload', function(req, res) {
   if (!req.files)
     return res.status(400).send('No files were uploaded.');
