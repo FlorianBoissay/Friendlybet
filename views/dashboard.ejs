@@ -33,30 +33,8 @@
           <div class="row">
 
             <div class="row col-6" id="games">
-                <!-- La boucle pour chaque jeu -->
-                <!--
-                <%
-                for (var i=0; i<dataGame.length; i++) {
-                %>
-                  <div class="game-card col-6">
-                    <div class="card text-center" >
-                      <img class="card-img-top" src="<%=dataGame[i].url%>" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title"><%=dataGame[i].name%></h5>
 
-                        <form action="/add-game" method="POST">
-                          <input type="hidden" name="url" value="<%=dataGame[i].url%>">
-                          <input type="hidden" name="name" value="<%=dataGame[i].name%>">
-                          <button class="btn btn-danger">Sélectionner</button>
-                        </form>
 
-                      </div>
-                    </div>
-                  </div>
-                <%
-                }
-                %>
-              -->
                 <div class="game-card col-6">
                   <div class="card text-center" >
                     <img class="card-img-top" src="/images/fifa18-back.jpg" alt="Card image cap">
@@ -101,29 +79,7 @@
 
             <div class="col-6" id="players">
               <!-- La boucle pour chaque joueur-->
-            <!--
-            <%
-            for(var i=0; i<dataPlayer.length; i++) {
-            %>
-
-              <div class="list-group text-center offset-3 col-6" >
-
-                <form action="/add-player" method="POST">
-                  <input type="hidden" name="pseudo" value="<%=dataPlayer[i].pseudo%>">
-                  <button type="button" class="list-group-item list-group-item-action"><%=dataPlayer[i].pseudo%></button>
-                </form>
-
-                <p>OU</p><br>
-                <form action="/add-friend" method="POST"> <!--Méthode GET ou POST pour inviter des amis? Où afficher les amis ?--> <!--
-                  <input type="hidden" name="" value="">
-                  <button type="button" id="btn-banner" class="btn btn-sample btn-primary btn-lg">Inviter des amis</button>
-                </form>
-
-              </div>
-            <%
-            }
-            %>
-          -->
+          
 
 
 
