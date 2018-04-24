@@ -1,0 +1,85 @@
+/* Envoi Photo */
+.pictonavbar {
+  width: 20px;
+}
+
+nav {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#navbarleft {
+  float: right;
+}
+
+#pictophoto {
+  margin-right: 30px;
+
+}
+
+.divphoto {
+  text-align: center;
+  justify-content: space-between;
+  margin-top: 150px;
+}
+
+#formphoto {
+  text-align: center;
+  margin-top: 150px;
+}
+
+#btnphoto {
+  margin-left: 590px;
+  margin-top: 150px;
+  margin-bottom: 100px;
+}
+
+#jeuphoto {
+  border: 1px #0072bb solid;
+  padding: 5px;
+  font-size: 30px;
+  color: #FFFFFF;
+  background-color: #0072bb;
+  border-radius: 10px;
+  margin-right: 50px;
+  margin-left: 400px;
+}
+
+#consolephoto {
+  border: 1px #0072bb solid;
+  padding: 5px;
+  font-size: 30px;
+  margin-right: 400px;
+  color: #FFFFFF;
+  background-color: #0072bb;
+  border-radius: 10px;
+}
+
+#fin {
+  color: #b3001b;
+  font-size: 30px;
+  text-align: center;
+}
+
+#userphoto1 {
+  background-color: #E8EAF6;
+  font-size: 30px;
+  padding: 15px 100px 15px 100px;
+  margin-left: 100px;
+}
+
+#userphoto2 {
+  background-color: #E8EAF6;
+  font-size: 30px;
+  padding: 15px 100px 15px 100px;
+  margin-right: 100px;
+}
+
+#scorephoto {
+  margin: 10px;
+  font-size: 60px;
+  border: 1px #468CC8 solid;
+  padding: 5px 20px 5px 20px;
+  color: #468CC8;
+}
