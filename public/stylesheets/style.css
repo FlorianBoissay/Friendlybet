@@ -171,3 +171,21 @@ opacity: 1;
   justify-content: space-around;
   align-items: center;
 }
+/*** attente reponse ***/
+.nav{
+ background-color: #0072bb;
+ color: #FFFFFF;
+}
+.nav:hover{
+ color : #FFFFFF;
+ font-weight: bolder;
+}
+#picto-user{
+ width: 24px;
+}
+
+h5{
+  text-align : center;
+  color: #428bca;
+  margin-top: 100px;
+}
