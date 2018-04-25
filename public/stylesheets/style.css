@@ -172,7 +172,7 @@ opacity: 1;
   justify-content: space-around;
   align-items: center;
 }
-/*** attente reponse ***/
+/*** attente reponse et partie en cours ***/
 .nav{
  background-color: #0072bb;
  color: #FFFFFF;
@@ -190,8 +190,8 @@ h5{
   color: #428bca;
   margin-top: 100px;
 }
-#video1{
-  width : 800px;
-  height : 600px;
-  padding: 600px;
+
+#video{
+  padding-top: 45px;
+  padding-bottom: 45px;
 }
