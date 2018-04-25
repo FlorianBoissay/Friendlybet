@@ -1,7 +1,7 @@
+var request = require('request');
 var express = require('express');
 var router = express.Router();
 var mongoose= require('mongoose');
-var request = require('request');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -75,20 +75,41 @@ var userSchema = mongoose.Schema({
 var UserModel = mongoose.model('users', userSchema);
 
 router.post('/inscription', function(req, res) {
-  console.log('lep', req.body)
 var newUser = new UserModel ({
-         pseudo: req.body.pseudo,
-         email: req.body.email,
-         password: req.body.password
-        });
-        newUser.save(
-          function (error, user) {
-              console.log(error, user);
+   pseudo: req.body.pseudo,
+   email: req.body.email,
+   password: req.body.password
+  });
+    newUser.save(
+      function (error, user) {
+        console.log(error);
+        console.log(user);
+        req.session.user = user;
+        UserModel.find(
+          {user_id: req.session.user._id},
+          function(err, user){
+            console.log(user);
+            res.render('dashboard', {user: req.session.user});
+          }
+        )
+      }
+    );
+});
 
-                 }
-             )
-            res.render();
-           }
-         );
+router.post('/connexion', function(req, res, next) {
+
+  UserModel.find(
+      { email: req.body.email, password: req.body.password} ,
+      function (err, users) {
+        if(users.length > 0) {
+          req.session.user = users[0];
+          res.render('dashboard', { user : req.session.user });
+        } else {
+          res.render('connexion');
+        }
+      }
+  );
+
+});
 
 module.exports = router;
