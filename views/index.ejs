@@ -8,7 +8,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/stylesheets/style.css">
   </head>
-  <body>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
 <!-- navbar-light bg-light -->
 <div class="container-fluid">
 
@@ -21,10 +21,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="/recap">Comment ça marche <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#section1">Comment ça marche <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/envoiphoto">Contact</a>
+          <a class="nav-link" href="/connexion">Dashboard</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/inscription">S'inscrire</a>
@@ -47,12 +47,12 @@
     <!-- Banniere -->
     <div class="banner">
       <h2>Friendly Bet, la meilleure façon de jouer et parier en ligne entre amis</h2>
-      <button type="button" id="btn-banner" class="btn btn-sample btn-primary btn-lg">Lances un défi maintenant</button>
+      <a href="/connexion"><button type="button" id="btn-banner" class="btn btn-sample btn-primary btn-lg">Lances un défi maintenant</button></a>
       <!-- <div id="back-black">
       </div> -->
     </div>
 
-    <div class="concept">
+    <div class="concept" id="section1">
       <h2>Comment ça marche</h2>
       <div id="concept-items">
         <div class="concept-item">
@@ -73,9 +73,11 @@
         </div>
       </div>
       <div id="btn-concept">
-        <a href="/dashboard"><button type="button"  class="btn btn-sample btn-primary btn-lg">Lances un défi maintenant</button></a>
+        <a href="/connexion"><button type="button"  class="btn btn-sample btn-primary btn-lg">Lances un défi maintenant</button></a>
       </div>
     </div>
+
+
 
 <!-- Retrouvez-nous -->
 
