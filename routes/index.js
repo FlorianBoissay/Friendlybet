@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var mongoose= require('mongoose');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -18,7 +19,6 @@ router.get('/connexion', function(req, res, next) {
   res.render('connexion')
 });
 
-
 /*ATTENTE page. */
 router.get('/attente', function(req, res, next) {
   res.render('attente')
@@ -29,7 +29,6 @@ router.get('/partie', function(req, res, next) {
   res.render('partie')
 });
 
-
 router.get('/envoiphoto', function(req, res, next) {
   res.render('envoiphoto')
 });
@@ -37,6 +36,10 @@ router.get('/envoiphoto', function(req, res, next) {
 router.get('/recap', function(req, res, next) {
   res.render('recap')
 });
+
+router.get('/dashboard', function(req, res, next) {
+  res.render('dashboard')
+})
 
 router.post('/upload', function(req, res) {
   if (!req.files)
@@ -53,5 +56,35 @@ router.post('/upload', function(req, res) {
     res.send('File uploaded!');
   });
 });
+
+var options = { server: { socketOptions: {connectTimeoutMS: 5000 } }};
+mongoose.connect('mongodb://florian:florian@ds036709.mlab.com:36709/friendlybet',
+    options,
+    function(err) {
+     console.log(err);
+    }
+);
+
+var userSchema = mongoose.Schema({
+    pseudo: String,
+    email: String,
+    password: Number
+});
+
+var UserModel = mongoose.model('users', userSchema);
+
+router.post('/inscription', function(res, req) {
+var newUser = new UserModel ({
+         pseudo: req.body.pseudo,
+         email: req.body.email,
+         password: req.body.password
+        });
+        newUser.save(
+          function (error, user) {
+
+                 }
+             )
+           }
+         );
 
 module.exports = router;
