@@ -1,7 +1,8 @@
 var request = require('request');
 var express = require('express');
 var router = express.Router();
-var mongoose= require('mongoose');
+var mongoose = require('mongoose');
+var session = require('express-session');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -80,15 +81,22 @@ var newUser = new UserModel ({
    email: req.body.email,
    password: req.body.password
   });
+
+  UserModel.find(
+    {users: pseudo}
+    function(err, user){
+      console.log(user);
+      // if(user != user_id){
+      // res.render('inscription')
+      // }
+    }
+  );
     newUser.save(
       function (error, user) {
-        console.log(error);
-        console.log(user);
         req.session.user = user;
         UserModel.find(
           {user_id: req.session.user._id},
           function(err, user){
-            console.log(user);
             res.render('dashboard', {user: req.session.user});
           }
         )
