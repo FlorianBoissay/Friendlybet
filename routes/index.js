@@ -3,6 +3,17 @@ var express = require('express');
 var router = express.Router();
 var mongoose= require('mongoose');
 
+var dataGame = [
+  {name: "FIFA18", url: "/images/fifa18-back.jpg"},
+  {name: "CALL OF DUTY", url: "/images/callofduty-back.jpg"},
+  {name: "NBA 2K18", url: "/images/nba.jpg"},
+  {name: "NEED FOR SPEED", url: "/images/needforspeed.jpg"},
+]
+
+var dataFriend =[
+  {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"}
+]
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -80,16 +91,28 @@ var newUser = new UserModel ({
    email: req.body.email,
    password: req.body.password
   });
+
+  UserModel.find(
+    {users: pseudo}
+    function(err, user){
+      console.log(user);
+      // if(user != user_id){
+      // res.render('inscription')
+      // }
+    }
+  );
     newUser.save(
       function (error, user) {
-        console.log(error);
-        console.log(user);
         req.session.user = user;
         UserModel.find(
           {user_id: req.session.user._id},
           function(err, user){
+<<<<<<< HEAD
             console.log(user);
+            res.render('dashboard', {dataGame: dataGame, user: req.session.user, dataFriend: dataFriend});
+=======
             res.render('dashboard', {user: req.session.user});
+>>>>>>> 7f5d9656c7e151b64fca06cf78501107ee4de3be
           }
         )
       }
@@ -103,7 +126,7 @@ router.post('/connexion', function(req, res, next) {
       function (err, users) {
         if(users.length > 0) {
           req.session.user = users[0];
-          res.render('dashboard', { user : req.session.user });
+          res.render('dashboard', { dataGame: dataGame, user : req.session.user, dataFriend: dataFriend });
         } else {
           res.render('connexion');
         }
