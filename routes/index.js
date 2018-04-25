@@ -2,7 +2,17 @@ var request = require('request');
 var express = require('express');
 var router = express.Router();
 var mongoose= require('mongoose');
-var bodyParser = require('body-parser')
+
+var dataGame = [
+  {name: "FIFA18", url: "/images/fifa18-back.jpg"},
+  {name: "CALL OF DUTY", url: "/images/callofduty-back.jpg"},
+  {name: "NBA 2K18", url: "/images/nba.jpg"},
+  {name: "NEED FOR SPEED", url: "/images/needforspeed.jpg"},
+]
+
+var dataFriend =[
+  {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"}
+]
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -90,7 +100,7 @@ var newUser = new UserModel ({
           {user_id: req.session.user._id},
           function(err, user){
             console.log(user);
-            res.render('dashboard', {user: req.session.user});
+            res.render('dashboard', {dataGame: dataGame, user: req.session.user, dataFriend: dataFriend});
           }
         )
       }
@@ -104,7 +114,7 @@ router.post('/connexion', function(req, res, next) {
       function (err, users) {
         if(users.length > 0) {
           req.session.user = users[0];
-          res.render('dashboard', { user : req.session.user });
+          res.render('dashboard', { dataGame: dataGame, user : req.session.user, dataFriend: dataFriend });
         } else {
           res.render('connexion');
         }
