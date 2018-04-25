@@ -2,6 +2,7 @@ var request = require('request');
 var express = require('express');
 var router = express.Router();
 var mongoose= require('mongoose');
+var session = require("express-session");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -59,7 +60,7 @@ router.post('/upload', function(req, res) {
 });
 
 var options = { server: { socketOptions: {connectTimeoutMS: 5000 } }};
-mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds255329.mlab.com:55329/friendlybet',
+mongoose.connect('mongodb://friendlybet:friendlybet@ds255329.mlab.com:55329/friendlybet',
     options,
     function(err) {
      console.log(err);
@@ -74,18 +75,42 @@ var userSchema = mongoose.Schema({
 
 var UserModel = mongoose.model('users', userSchema);
 
-router.post('/inscription', function(res, req) {
+router.post('/inscription', function(req, res) {
 var newUser = new UserModel ({
-         pseudo: req.body.pseudo,
-         email: req.body.email,
-         password: req.body.password
-        });
-        newUser.save(
-          function (error, user) {
+   pseudo: req.body.pseudo,
+   email: req.body.email,
+   password: req.body.password
+  });
+    newUser.save(
+      function (error, user) {
+        console.log(error);
+        console.log(user);
+        req.session.user = user;
+        UserModel.find(
+          {user_id: req.session.user._id},
+          function(err, user){
+            console.log(user);
+            res.render('dashboard', {user: req.session.user});
+          }
+        )
+      }
+    );
+});
 
-                 }
-             )
-           }
-         );
+router.post('/connexion', function(req, res, next) {
+
+  UserModel.find(
+      { email: req.body.email, password: req.body.password} ,
+      function (err, users) {
+        if(users.length > 0) {
+          req.session.user = users[0];
+          res.render('dashboard', { user : req.session.user });
+        } else {
+          res.render('connexion');
+        }
+      }
+  );
+
+});
 
 module.exports = router;

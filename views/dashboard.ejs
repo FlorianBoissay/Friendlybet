@@ -14,7 +14,7 @@
 <!-- barre de navigation -->
       <ul class="nav justify-content-end">
         <li class="nav-item">
-          <a class="nav-link" href="#"><%%></a>
+          <a class="nav-link" href="#"><%=user.pseudo%></a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="/dashboard"><img src="/icons/user.svg" id="picto-user"></a>
@@ -28,7 +28,7 @@
     <br>
 <!-- contenu Dashboard -->
     <div id="main-dashboard">
-        <h3>Bienvenue <%%>, commencez à jouer et parier avec vos amis</h3><br>
+        <h3>Bienvenue <%=user.pseudo%>, commencez à jouer et parier avec vos amis</h3><br>
         <div class="container">
           <div class="row">
 
