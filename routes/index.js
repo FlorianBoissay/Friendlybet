@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongoose= require('mongoose');
+var request = require('request');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -58,22 +59,23 @@ router.post('/upload', function(req, res) {
 });
 
 var options = { server: { socketOptions: {connectTimeoutMS: 5000 } }};
-mongoose.connect('mongodb://florian:florian@ds036709.mlab.com:36709/friendlybet',
+mongoose.connect('mongodb://friendlybet:friendlybet@ds255329.mlab.com:55329/friendlybet',
     options,
     function(err) {
-     console.log(err);
+      console.error('[ERROR]', err);
     }
 );
 
 var userSchema = mongoose.Schema({
     pseudo: String,
     email: String,
-    password: Number
+    password: String
 });
 
 var UserModel = mongoose.model('users', userSchema);
 
-router.post('/inscription', function(res, req) {
+router.post('/inscription', function(req, res) {
+  console.log('lep', req.body)
 var newUser = new UserModel ({
          pseudo: req.body.pseudo,
          email: req.body.email,
@@ -81,9 +83,11 @@ var newUser = new UserModel ({
         });
         newUser.save(
           function (error, user) {
+              console.log(error, user);
 
                  }
              )
+            res.render();
            }
          );
 

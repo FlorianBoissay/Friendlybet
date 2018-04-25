@@ -1,4 +1,7 @@
 /* Homepage */
+.container-fluid {
+  padding: 0px;
+}
 
 /* Barre navigation */
 .navbar-custom{
@@ -6,17 +9,20 @@
   color: #FFFFFF;
   display: flex;
 }
+
 .navbar-brand{
   color: #FFFFFF;
-
 }
+
 .navbar-brand:hover{
   color : #FFFFFF;
   font-weight: bolder;
 }
+
 .nav-link{
     color: #FFFFFF;
 }
+
 .nav-link:hover{
   color: #FFFFFF;
   font-weight: bolder;
@@ -31,6 +37,7 @@
 .form-control{
   border-color: #b3001b;
 }
+
 .input-group-text{
   background-color: #b3001b;
   color: white;
@@ -40,6 +47,7 @@
   border-bottom-right-radius: 0rem;
   border-bottom-left-radius: 0rem;
 }
+
  /** Bannière **/
 .banner{
   background-image: url("/images/fifa18-back.jpg");
@@ -47,6 +55,7 @@
   height: 100vh;
   color: #FFFFFF;
 }
+
 #back-black{
   background-color: black;
   opacity: 0.6;
@@ -109,11 +118,13 @@ fieldset[disabled] .btn-sample.active {
   justify-content: space-around;
   align-items: center;
 }
+
 .banner h2{
 -webkit-text-stroke: 1px grey;
 margin-bottom: 500px;
 opacity: 1;
 }
+
 #btn-banner{
   margin-bottom: 0px;
   opacity: 1;
@@ -131,6 +142,7 @@ opacity: 1;
   justify-content: space-around;
   align-items: center;
 }
+
 #concept-items{
   font-size: 20px;
   width: 100%;
@@ -150,14 +162,17 @@ opacity: 1;
   justify-content: space-around;
   /* align-items: center; */
 }
+
 .contact h2 {
   text-align: center;
 }
+
 .socials{
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
+
 .social{
   width: 80px;
   margin-bottom: 50px;
@@ -174,15 +189,18 @@ opacity: 1;
   justify-content: space-around;
   align-items: center;
 }
+
 /*** attente reponse et partie en cours ***/
 .nav{
  background-color: #0072bb;
  color: #FFFFFF;
 }
+
 .nav:hover{
  color : #FFFFFF;
  font-weight: bolder;
 }
+
 #picto-user{
  width: 24px;
 }
