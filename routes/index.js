@@ -2,7 +2,6 @@ var request = require('request');
 var express = require('express');
 var router = express.Router();
 var mongoose= require('mongoose');
-var session = require("express-session");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -63,7 +62,7 @@ var options = { server: { socketOptions: {connectTimeoutMS: 5000 } }};
 mongoose.connect('mongodb://friendlybet:friendlybet@ds255329.mlab.com:55329/friendlybet',
     options,
     function(err) {
-     console.log(err);
+      console.error('[ERROR]', err);
     }
 );
 
