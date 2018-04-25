@@ -73,7 +73,7 @@ var options = { server: { socketOptions: {connectTimeoutMS: 5000 } }};
 mongoose.connect('mongodb://friendlybet:friendlybet@ds255329.mlab.com:55329/friendlybet',
     options,
     function(err) {
-     console.log(err);
+      console.error('[ERROR]', err);
     }
 );
 
@@ -91,16 +91,28 @@ var newUser = new UserModel ({
    email: req.body.email,
    password: req.body.password
   });
+
+  UserModel.find(
+    {users: pseudo}
+    function(err, user){
+      console.log(user);
+      // if(user != user_id){
+      // res.render('inscription')
+      // }
+    }
+  );
     newUser.save(
       function (error, user) {
-        console.log(error);
-        console.log(user);
         req.session.user = user;
         UserModel.find(
           {user_id: req.session.user._id},
           function(err, user){
+<<<<<<< HEAD
             console.log(user);
             res.render('dashboard', {dataGame: dataGame, user: req.session.user, dataFriend: dataFriend});
+=======
+            res.render('dashboard', {user: req.session.user});
+>>>>>>> 7f5d9656c7e151b64fca06cf78501107ee4de3be
           }
         )
       }
