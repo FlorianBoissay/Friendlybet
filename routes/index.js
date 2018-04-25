@@ -1,3 +1,4 @@
+var request = require('request');
 var express = require('express');
 var router = express.Router();
 var mongoose= require('mongoose');
@@ -58,7 +59,7 @@ router.post('/upload', function(req, res) {
 });
 
 var options = { server: { socketOptions: {connectTimeoutMS: 5000 } }};
-mongoose.connect('mongodb://florian:florian@ds036709.mlab.com:36709/friendlybet',
+mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds255329.mlab.com:55329/friendlybet',
     options,
     function(err) {
      console.log(err);
@@ -68,7 +69,7 @@ mongoose.connect('mongodb://florian:florian@ds036709.mlab.com:36709/friendlybet'
 var userSchema = mongoose.Schema({
     pseudo: String,
     email: String,
-    password: Number
+    password: String
 });
 
 var UserModel = mongoose.model('users', userSchema);
