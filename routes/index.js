@@ -70,7 +70,7 @@ router.get('/dashboard', function(req, res, next) {
 });
 
 router.get('/panier', function(req, res, next) {
-  res.render('panier')
+  res.render('panier', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
 });
 
 router.post('/upload', function(req, res) {
@@ -114,31 +114,31 @@ var newUser = new UserModel ({
    console: req.body.console
   });
 
-  UserModel.find(
-    {},
-    function(err, user){
-      console.log(user);
-      if(user.length>0){
+  // UserModel.find(
+  //   {},
+  //   function(err, user){
+  //     console.log(user);
+  //     if(user.length>0){
         newUser.save(
           function (error, user) {
             req.session.user = user;
-            UserModel.find(
-              {user_id: req.session.user._id},
-              function(err, user){
-
-                console.log(user);
+            // UserModel.find(
+            //   {user_id: req.session.user._id},
+            //   function(err, user){
+            //
+            //     console.log(user);
                 res.render('dashboard', {dataGame: dataGame, user: req.session.user, dataFriend: dataFriend});
               }
             )
           }
         );
-      }else {
-        res.render('inscription');
-      }
-
-    }
-  );
-});
+  //     }else {
+  //       res.render('inscription');
+  //     }
+  //
+  //   }
+  // );
+// });
 router.post('/connexion', function(req, res, next) {
 
   UserModel.find(

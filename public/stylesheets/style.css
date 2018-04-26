@@ -224,3 +224,9 @@ h5{
 .btn-light {
   padding: 50px;
 }
+
+#resume {
+  color: #b3001b;
+  font-size: 30px;
+  text-align: center;
+}
