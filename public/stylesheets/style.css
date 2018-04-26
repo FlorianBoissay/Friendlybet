@@ -215,3 +215,18 @@ h5{
   padding-top: 45px;
   padding-bottom: 45px;
 }
+
+.btn-toolbar {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-light {
+  padding: 50px;
+}
+
+#resume {
+  color: #b3001b;
+  font-size: 30px;
+  text-align: center;
+}

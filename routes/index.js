@@ -8,14 +8,27 @@ var dataGame = [
   {name: "CALL OF DUTY", url: "/images/callofduty-back.jpg"},
   {name: "NBA 2K18", url: "/images/nba.jpg"},
   {name: "NEED FOR SPEED", url: "/images/needforspeed.jpg"},
-]
+];
+
+var dataPrice = [
+  {price: 5},
+  {price: 10},
+  {price: 15},
+  {price: 20},
+  {price: 25},
+  {price: 30},
+  {price: 35},
+  {price: 40},
+  {price: 45},
+  {price: 50}
+];
 
 var dataFriend =[
   {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"},
   {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"},
   {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"},
   {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"}
-]
+];
 
 
 
@@ -39,10 +52,6 @@ router.get('/connexion', function(req, res, next) {
   res.render('connexion')
 });
 
-
-
-
-
 /*ATTENTE page. */
 router.get('/attente', function(req, res, next) {
   res.render('attente')
@@ -63,7 +72,11 @@ router.get('/recap', function(req, res, next) {
 
 router.get('/dashboard', function(req, res, next) {
   res.render('dashboard')
-})
+});
+
+router.get('/panier', function(req, res, next) {
+  res.render('panier', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
+});
 
 router.post('/upload', function(req, res) {
   if (!req.files)
@@ -92,7 +105,8 @@ mongoose.connect('mongodb://friendlybet:friendlybet@ds255329.mlab.com:55329/frie
 var userSchema = mongoose.Schema({
     pseudo: String,
     email: String,
-    password: String
+    password: String,
+    console: String,
 });
 
 var UserModel = mongoose.model('users', userSchema);
@@ -101,7 +115,8 @@ router.post('/inscription', function(req, res) {
 var newUser = new UserModel ({
    pseudo: req.body.pseudo,
    email: req.body.email,
-   password: req.body.password
+   password: req.body.password,
+   console: req.body.console
   });
 
   UserModel.find(
@@ -147,9 +162,10 @@ router.post('/connexion', function(req, res, next) {
 });
 
 router.post('/choice', function(req, res, next){
-  game = req.body.game,
-  friend = req.body.friend;
-  res.render('miser');
+  gameSelected = req.body.game,
+  friendSelected = req.body.friend;
+
+  res.render('miser', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend});
 });
 
 module.exports = router;

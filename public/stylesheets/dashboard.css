@@ -26,13 +26,20 @@
 #games{
   margin-top: 0px;
 }
-.card{
+/* .card{
   color: black;
-}
-.card-img-top{
+}*/
+.img-game{
   width: 239px;
   height: 160px;
+  margin-right: 5px;
 }
+.list-group{
+  overflow: auto;
+}
+/* .#players p{
+  overflow: auto;
+} */
 /*** Customisation du bouton bootstrap ***/
 .btn-sample {
 color: #ffffff;
