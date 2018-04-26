@@ -101,6 +101,7 @@ var newUser = new UserModel ({
     {},
     function(err, user){
       console.log(user);
+      console.log(err);
       if(user.length>0){
         newUser.save(
           function (error, user) {
