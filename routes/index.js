@@ -36,15 +36,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/miser', function(req, res, next) {
-  res.render('miser')
+  res.render('miser', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
 });
 
 router.get('/inscription', function(req, res, next) {
-  res.render('inscription')
+  res.render('inscription', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
 });
 
 router.get('/connexion', function(req, res, next) {
-  res.render('connexion')
+  res.render('connexion', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
 });
 
 /*ATTENTE page. */
@@ -54,19 +54,19 @@ router.get('/attente', function(req, res, next) {
 
 /*partie page. */
 router.get('/partie', function(req, res, next) {
-  res.render('partie')
+  res.render('partie', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
 });
 
 router.get('/envoiphoto', function(req, res, next) {
-  res.render('envoiphoto')
+  res.render('envoiphoto', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
 });
 
 router.get('/recap', function(req, res, next) {
-  res.render('recap')
+  res.render('recap', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
 });
 
 router.get('/dashboard', function(req, res, next) {
-  res.render('dashboard')
+  res.render('dashboard', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
 });
 
 router.get('/panier', function(req, res, next) {
