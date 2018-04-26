@@ -18,13 +18,13 @@
 
           <h2><span class="badge badge-secondary">Montant du pari</span></h2><br>
           <div class="">
-            <span class="badge badge-secondary">Le jeu</span>
-            <span class="badge badge-secondary">La console</span>
+            <span class="badge badge-secondary"><%=gameSelected%></span>
+            <span class="badge badge-secondary"><%=user.console%></span>
           </div><br>
           <div class="row">
             <div class="card col-4">
               <div class="card-body">
-                UserName
+                <%=user.pseudo%>
               </div>
             </div>
             <div class="col-3">
@@ -32,7 +32,7 @@
             </div>
             <div class="card col-4">
               <div class="card-body">
-                Adversaire
+                <%=friendSelected%>
               </div>
             </div>
           </div>
