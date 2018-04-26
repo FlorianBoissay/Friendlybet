@@ -8,11 +8,24 @@ var dataGame = [
   {name: "CALL OF DUTY", url: "/images/callofduty-back.jpg"},
   {name: "NBA 2K18", url: "/images/nba.jpg"},
   {name: "NEED FOR SPEED", url: "/images/needforspeed.jpg"},
-]
+];
+
+var dataPrice = [
+  {price: 5},
+  {price: 10},
+  {price: 15},
+  {price: 20},
+  {price: 25},
+  {price: 30},
+  {price: 35},
+  {price: 40},
+  {price: 45},
+  {price: 50}
+];
 
 var dataFriend =[
   {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"}
-]
+];
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -51,7 +64,11 @@ router.get('/recap', function(req, res, next) {
 
 router.get('/dashboard', function(req, res, next) {
   res.render('dashboard')
-})
+});
+
+router.get('/panier', function(req, res, next) {
+  res.render('panier')
+});
 
 router.post('/upload', function(req, res) {
   if (!req.files)
@@ -92,33 +109,28 @@ var newUser = new UserModel ({
    password: req.body.password
   });
 
-  UserModel.find(
-    {users: pseudo}
-    function(err, user){
-      console.log(user);
-      // if(user != user_id){
-      // res.render('inscription')
-      // }
-    }
-  );
+  // UserModel.find(
+  //   {users: pseudo}
+  //   function(err, user){
+  //     console.log(user);
+  //     // if(user != user_id){
+  //     // res.render('inscription')
+  //     // }
+
+
     newUser.save(
       function (error, user) {
         req.session.user = user;
         UserModel.find(
           {user_id: req.session.user._id},
           function(err, user){
-<<<<<<< HEAD
             console.log(user);
             res.render('dashboard', {dataGame: dataGame, user: req.session.user, dataFriend: dataFriend});
-=======
-            res.render('dashboard', {user: req.session.user});
->>>>>>> 7f5d9656c7e151b64fca06cf78501107ee4de3be
           }
         )
       }
     );
 });
-
 router.post('/connexion', function(req, res, next) {
 
   UserModel.find(
