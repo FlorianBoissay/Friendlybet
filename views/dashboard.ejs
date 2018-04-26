@@ -29,59 +29,48 @@
 <!-- contenu Dashboard -->
     <div id="main-dashboard">
         <h3>Bienvenue <%=user.pseudo%>, commencez à jouer et parier avec vos amis</h3><br>
+
         <div class="container">
+
+          <div class="row list-game">
+            <img src="/images/fifa18-back.jpg" class=" img-game img-fluid" alt="">
+            <img src="/images/callofduty-back.jpg" class=" img-game img-fluid" alt="">
+            <img src="/images/nba.jpg" class=" img-game img-fluid" alt="">
+            <img src="/images/needforspeed.jpg" class=" img-game img-fluid" alt="">
+          </div><br>
+
+
           <div class="row">
 
-            <div class="row col-6" id="games">
-              <%
-                for (var i=0; i<dataGame.length; i++) {
-                %>
-                  <div class="game-card col-6">
-                    <div class="card text-center" >
-                      <img class="card-img-top" src="<%=dataGame[i].url%>" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title"><%=dataGame[i].name%></h5>
-
-                        <form action="/add-game" method="POST">
-                          <input type="hidden" name="url" value="<%=dataGame[i].url%>">
-                          <input type="hidden" name="name" value="<%=dataGame[i].name%>">
-                          <div class="form-check">
-                            <input type="checkbox" name="gameselect" class="form-check-input" id="dropdownCheck">
-                          </div>
-                          <!-- <button class="btn btn-danger">Sélectionner</button> -->
-                        </form>
-
-                      </div>
-                    </div>
-                  </div>
-                <%
-                }
-                %>
-            </div>
-
             <div class="col-6" id="players">
-              <!-- La boucle pour chaque joueur-->
-                <%
-                for(var i=0; i<dataFriend.length; i++) {
-                %>
+              <h4>Amis</h4>
 
-                  <div class="list-group text-center offset-3 col-6" >
+              <%
+              for(var i=0; i<dataFriend.length; i++) {
+              %>
+              <ul class="list-group">
+                <li class="list-group-item"><%=dataFriend[i].name%></li>
+              </ul>
+              <%
+              }
+              %>
 
-                    <form action="/add-friend" method="POST">
-                      <input type="hidden" name="pseudo" value="<%=dataFriend[i].name%>">
-                      <button type="button" class="list-group-item list-group-item-action"><%=dataFriend[i].name%></button>
-                    </form>
-                  </div>
-               <%
-               }
-               %>
-
-              </div>
             </div>
+
+              <div class="col-4">
+                <h4>Choisis un jeu et un ami</h4>
+                <form action="/choice" method="POST">
+                  <input class="form-control" name="game" type="text" placeholder="Tapes le nom du jeu"><br>
+                  <input class="form-control" name="friend" type="text" placeholder="Tapes le pseudo de ton ami"><br>
+                  <button type="submit" class="btn btn-sample btn-secondary">Valider</button>
+                </form>
+              </div>
+
           </div>
 
-
         </div>
+    </div>
+
 
 
   </body>
