@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Choisis ta mise!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="offset-1 col-10 text-center">
+
+
+          <h2><span class="badge badge-secondary">Montant du pari</span></h2><br>
+          <div class="">
+            <span class="badge badge-secondary"><%=gameSelected%></span>
+            <span class="badge badge-secondary"><%=user.console%></span>
+          </div><br>
+          <div class="row">
+            <div class="card col-4">
+              <div class="card-body">
+                <%=user.pseudo%>
+              </div>
+            </div>
+            <div class="col-3">
+              <h3>VS</h3>
+            </div>
+            <div class="card col-4">
+              <div class="card-body">
+                <%=friendSelected%>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <br>
+
+      <div class="row">
+        <div class="btn-mise">
+          <form action="/mise5" method="POST">
+            <input type="hidden" name="cinq" value="5">
+            <button type="submit" class="btn btn-outline-dark btn-lg">5 €</button>
+          </form>
+        </div>
+
+        <div class="btn-mise">
+          <form action="/mise10" method="POST">
+            <input type="hidden" name="dix" value="10">
+            <button type="submit" class="btn btn-outline-dark btn-lg">10 €</button>
+          </form>
+        </div>
+
+        <div class="btn-mise">
+          <form action="/mise20" method="POST">
+            <input type="hidden" name="vingt">
+            <button type="submit" class="btn btn-outline-dark btn-lg">20 €</button>
+          </form>
+        </div>
+
+        <div class="btn-mise">
+          <form action="/mise30" method="POST">
+            <input type="hidden" name="trente">
+            <button type="submit" class="btn btn-outline-dark btn-lg">30 €</button>
+          </form>
+        </div>
+
+        <div class="btn-mise">
+          <form action="/mise40" method="POST">
+            <input type="hidden" name="quarante">
+            <button type="submit" class="btn btn-outline-dark btn-lg">40 €</button>
+          </form>
+        </div>
+
+        <div class="btn-mise">
+          <form action="/mise50" method="POST">
+            <input type="hidden" name="cinquante">
+            <button type="submit" class="btn btn-outline-dark btn-lg">50 €</button>
+          </form>
+        </div>
+
+      </div>
+
+
+
+
+              <!-- <div class="btn-group mr-2 btn-group-lg" role="group" aria-label="Second group">
+                <button type="button" class="btn btn-light">10€</button>
+              </div>
+
+              <div class="btn-group mr-2 btn-group-lg" role="group" aria-label="Second group">
+                <button type="button" class="btn btn-light">15€</button>
+              </div>
+
+              <div class="btn-group mr-2 btn-group-lg" role="group" aria-label="Second group">
+                <button type="button" class="btn btn-light">20€</button>
+              </div>
+
+              <div class="btn-group mr-2 btn-group-lg" role="group" aria-label="Second group">
+                <button type="button" class="btn btn-light">25€</button>
+              </div>
+
+              <div class="btn-group mr-2 btn-group-lg" role="group" aria-label="Second group">
+                <button type="button" class="btn btn-light">30€</button>
+              </div>
+
+              <div class="btn-group mr-2 btn-group-lg" role="group" aria-label="Second group">
+                <button type="button" class="btn btn-light">35€</button>
+              </div>
+
+              <div class="btn-group mr-2 btn-group-lg" role="group" aria-label="Second group">
+                <button type="button" class="btn btn-light">40€</button>
+              </div>
+
+              <div class="btn-group mr-2 btn-group-lg" role="group" aria-label="Second group">
+                <button type="button" class="btn btn-light">45€</button>
+              </div>
+
+              <div class="btn-group mr-2 btn-group-lg" role="group" aria-label="Second group">
+                <button type="button" class="btn btn-light">50€</button>
+              </div>
+            </div> -->
+
+          <br>
+
+    <!-- <div id="paypal-button"></div> -->
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </body>
+  </html>

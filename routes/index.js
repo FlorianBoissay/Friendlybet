@@ -8,14 +8,23 @@ var dataGame = [
   {name: "CALL OF DUTY", url: "/images/callofduty-back.jpg"},
   {name: "NBA 2K18", url: "/images/nba.jpg"},
   {name: "NEED FOR SPEED", url: "/images/needforspeed.jpg"},
-]
+];
+
+var dataPrice = [
+  {name: 'cinq', price: 5},
+  {name: 'dix', price: 10},
+  {name: 'vingt', price: 20},
+  {name: 'trente', price: 30},
+  {name: 'quarante', price: 40},
+  {name: 'cinquante', price: 50}
+];
 
 var dataFriend =[
   {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"},
   {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"},
   {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"},
   {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"}
-]
+];
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -54,7 +63,11 @@ router.get('/recap', function(req, res, next) {
 
 router.get('/dashboard', function(req, res, next) {
   res.render('dashboard')
-})
+});
+
+router.get('/panier', function(req, res, next) {
+  res.render('panier', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
+});
 
 router.post('/upload', function(req, res) {
   if (!req.files)
@@ -123,7 +136,6 @@ var newUser = new UserModel ({
     }
   );
 });
-
 router.post('/connexion', function(req, res, next) {
 
   UserModel.find(
@@ -145,6 +157,37 @@ router.post('/choice', function(req, res, next){
   friendSelected = req.body.friend;
 
   res.render('miser', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend});
+});
+
+// Routes pour les mises vers le panier
+router.post('/mise5', function (req, res, next){
+  montant = req.body.cinq;
+  res.render('panier', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend, montant: montant});
+});
+
+router.post('/mise10', function (req, res, next){
+  montant = req.body.dix;
+  res.render('panier', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend,  montant: montant});
+});
+
+router.post('/mise20', function (req, res, next){
+  montant = req.body.vingt;
+  res.render('panier', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend,  montant: montant});
+});
+
+router.post('/mise30', function (req, res, next){
+  montant = req.body.trente;
+  res.render('panier', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend, montant: montant});
+});
+
+router.post('/mise40', function (req, res, next){
+  montant = req.body.quarante;
+  res.render('panier', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend, montant: montant});
+});
+
+router.post('/mise50', function (req, res, next){
+  montant = req.body.cinquante;
+  res.render('panier', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend, montant: montant});
 });
 
 module.exports = router;
