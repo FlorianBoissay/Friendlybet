@@ -11,6 +11,9 @@ var dataGame = [
 ]
 
 var dataFriend =[
+  {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"},
+  {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"},
+  {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"},
   {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"}
 ]
 
@@ -80,7 +83,8 @@ mongoose.connect('mongodb://friendlybet:friendlybet@ds255329.mlab.com:55329/frie
 var userSchema = mongoose.Schema({
     pseudo: String,
     email: String,
-    password: String
+    password: String,
+    console: String,
 });
 
 var UserModel = mongoose.model('users', userSchema);
@@ -89,34 +93,34 @@ router.post('/inscription', function(req, res) {
 var newUser = new UserModel ({
    pseudo: req.body.pseudo,
    email: req.body.email,
-   password: req.body.password
+   password: req.body.password,
+   console: req.body.console
   });
 
   UserModel.find(
-    {users: pseudo}
+    {},
     function(err, user){
       console.log(user);
-      // if(user != user_id){
-      // res.render('inscription')
-      // }
+      if(user.length>0){
+        newUser.save(
+          function (error, user) {
+            req.session.user = user;
+            UserModel.find(
+              {user_id: req.session.user._id},
+              function(err, user){
+
+                console.log(user);
+                res.render('dashboard', {dataGame: dataGame, user: req.session.user, dataFriend: dataFriend});
+              }
+            )
+          }
+        );
+      }else {
+        res.render('inscription');
+      }
+
     }
   );
-    newUser.save(
-      function (error, user) {
-        req.session.user = user;
-        UserModel.find(
-          {user_id: req.session.user._id},
-          function(err, user){
-<<<<<<< HEAD
-            console.log(user);
-            res.render('dashboard', {dataGame: dataGame, user: req.session.user, dataFriend: dataFriend});
-=======
-            res.render('dashboard', {user: req.session.user});
->>>>>>> 7f5d9656c7e151b64fca06cf78501107ee4de3be
-          }
-        )
-      }
-    );
 });
 
 router.post('/connexion', function(req, res, next) {
@@ -133,6 +137,13 @@ router.post('/connexion', function(req, res, next) {
       }
   );
 
+});
+
+router.post('/choice', function(req, res, next){
+  gameSelected = req.body.game,
+  friendSelected = req.body.friend;
+
+  res.render('miser', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend});
 });
 
 module.exports = router;
