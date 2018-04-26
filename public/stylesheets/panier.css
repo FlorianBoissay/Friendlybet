@@ -1,4 +1,54 @@
+.nav{
+  background-color: #0072bb;
+  color: #FFFFFF;
+}
+.nav-link{
+  color: #FFFFFF;
+}
+.nav-link :hover{
+  color : #FFFFFF;
+  font-weight: bolder;
+}
+#picto-user{
+  width: 20px;
+}
+
 .panier {
   display: flex;
   justify-content: center;
+}
+
+#paypal-button {
+  display: flex;
+  justify-content: center;
+}
+
+#resume {
+  color: #b3001b;
+  font-size: 30px;
+  text-align: center;
+}
+
+.text-center {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+#mise {
+  display: flex;
+  justify-content: center;
+  font-size: 60px;
+  color: #0072bb;
+}
+
+#chiffre {
+  border: 2px solid #0072bb;
+  border-radius: 7px;
+  padding: 5px 10px 5px 10px;
 }
