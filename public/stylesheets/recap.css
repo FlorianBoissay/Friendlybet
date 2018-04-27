@@ -77,14 +77,14 @@
 
 .gainrecap {
   margin: 10px;
-  font-size: 60px;
+  font-size: 40px;
   border: 1px #468CC8 solid;
   padding: 5px 20px 5px 20px;
   color: #468CC8;
 }
 
 .deviserecap {
-  font-size: 60px;
+  font-size: 40px;
   color: #468CC8;
   padding-top: 15px;
 }

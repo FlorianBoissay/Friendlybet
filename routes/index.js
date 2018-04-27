@@ -23,10 +23,15 @@ var dataFriend =[
   {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"},
 ]
 
+var dataNews = [
+  {news1 : '27 Avril 2018 : FIFA annonce des mises '},
+  {news2: '28 Avril 2018 : Friendlybet vient de lever 1 millions € pour son développement national'},
+  {news3: '29 Avril 2018 : Call of Duty devient le jeu le plus piraté au monde'}
+]
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Express', dataNews : dataNews });
 });
 
 // router.get('/miser', function(req, res, next) {
