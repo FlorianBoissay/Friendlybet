@@ -162,4 +162,5 @@ router.post('/choice', function(req, res, next){
   res.render('miser', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend});
 });
 
+
 module.exports = router;
