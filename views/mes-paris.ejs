@@ -22,28 +22,16 @@
      </li>
    </ul>
 
-    <div class="container">
+   <div class="container">
+    <h5>friendSelected a répondu favorablement à ton invitation.</h5>
 
-      <div id="infos">
-        <h5>Votre mise de <%=montant%> a bien été prise en compte.</h5>
-        <h5>Un mail à été envoyé à <%=friendSelected%> pour accepter ou refuser votre challenge</h5>
-        <h5>Vous recevrez un mail et une notification pour continuer à jouer avec Baptiste69</h5>
-      </div>
-      <br>
+    <form action="/partie" method="POST">
+      <input type="hidden" name="partie" id="">
+      <button type="submit" name="button">Commencer la partie</button>
+    </form>
+
+   </div>
 
 
-    <div class="text-center">
-      <a href="/dashboard" type="button" class="btn btn-sample btn-primary btn-lg">Mon compte</a>
-    </div>
-    <br>
-
-    <div class="text-center" id="video">
-    	<object>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/VpvHk6sHAOY"
-         frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    	</object>
-    </div>
-
-    </div>
   </body>
 </html>

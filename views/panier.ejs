@@ -25,7 +25,7 @@
       </ul>
 
       <div id="resume">
-        Résumé de votre partie
+        Récapitulatif de votre mise
       </div>
 
       <div class="panier">
@@ -53,9 +53,14 @@
 
 <p class="text-center" id"confirmation">Pour confirmer votre choix, cliquer sur le bouton ci-dessous</p>
 
-          <div id="paypal-button"></div>
+          <div id="paypal-button">
+            <form action="/paiement" method="POST">
+              <input type="hidden" name="paiement" value="">
+              <button type="submit"><img src="/images/paypal.png" style="border: 0px; width:300px; height:60px;" alt=""></button>
+            </form>
+          </div>
 
-            <script>
+            <!-- <script>
               paypal.Button.render({
                 env: 'production', // Or 'sandbox',
 
@@ -90,7 +95,7 @@
                    */
                 }
               }, '#paypal-button');
-            </script>
+            </script> -->
     </div>
   </body>
 </html>

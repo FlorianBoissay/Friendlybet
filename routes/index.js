@@ -44,9 +44,9 @@ router.get('/connexion', function(req, res, next) {
 });
 
 /*ATTENTE page. */
-router.get('/attente', function(req, res, next) {
-  res.render('attente')
-});
+// router.get('/attente', function(req, res, next) {
+//   res.render('attente')
+// });
 
 /*partie page. */
 router.get('/partie', function(req, res, next) {
@@ -188,6 +188,22 @@ router.post('/mise40', function (req, res, next){
 router.post('/mise50', function (req, res, next){
   montant = req.body.cinquante;
   res.render('panier', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend, montant: montant});
+});
+
+router.post('/paiement', function (req, res, next){
+  res.render('attente', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend, montant: montant});
+});
+
+router.get('/attente', function(req, res, next) {
+  res.render('dashboard', {dataGame: dataGame, dataFriend: dataFriend, user: req.session.user, montant: montant});
+});
+
+router.get('/mes-paris', function(req, res, next){
+  res.render('mes-paris', {dataGame: dataGame, dataFriend: dataFriend, user: req.session.user, friendSelected: req.body.friend, montant: montant});
+});
+
+router.post('/partie', function(req, res, next){
+    res.render('partie', {dataGame: dataGame, dataFriend: dataFriend, user: req.session.user, friendSelected: req.body.friend, montant: montant});
 });
 
 module.exports = router;

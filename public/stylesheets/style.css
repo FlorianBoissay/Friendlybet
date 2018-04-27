@@ -1,3 +1,7 @@
+body{
+  margin: 0;
+}
+
 /* Homepage */
 .container-fluid {
   padding: 0px;
@@ -189,7 +193,15 @@ opacity: 1;
   justify-content: space-around;
   align-items: center;
 }
-
+/*** Miser ***/
+#montant-pari {
+  color: #b3001b;
+  font-size: 30px;
+  text-align: center;
+}
+.btn-mise{
+  margin-right: 20px;
+}
 /*** attente reponse et partie en cours ***/
 .nav{
  background-color: #0072bb;
