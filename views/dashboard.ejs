@@ -71,25 +71,21 @@
 
         <div class="container">
 
-<<<<<<< HEAD
-
-          <div class="row list-game">
-            <img src="/images/fifa18-back.jpg" class=" img-game img-fluid" alt="">
+          <!-- <div class="row list-game">
+            <img src="/images/fifa18-back.jpg" name="fifa 18" class=" img-game img-fluid">
             <img src="/images/callofduty-back.jpg" class=" img-game img-fluid" alt="">
             <img src="/images/nba.jpg" class=" img-game img-fluid" alt="">
             <img src="/images/needforspeed.jpg" class=" img-game img-fluid" alt="">
-          </div><br>
+          </div><br> -->
 
 
-=======
->>>>>>> 5d4a63ecb6b51e88a972c2a7e933bfe36063e0de
           <div class="row">
 
             <div class="col-6" id="players">
               <h4>Amis</h4>
 
               <%
-              for(var i=0; i<dataFriend.length; i++) {
+              for(let i=0; i<dataFriend.length; i++) {
               %>
               <ul class="list-group">
                 <li class="list-group-item call"><%=dataFriend[i].name%></li>
@@ -101,25 +97,39 @@
 
             </div>
 
+            <div class="col-6">
+              <h4>Jeux</h4>
+              <%
+              for(let j=0; j<dataGame.length; j++) {
+              %>
+              <ul class="list-group">
+                <li class="list-group-item game"><%=dataGame[j].name%></li>
+              </ul>
+              <%
+              }
+              %>
+            </div>
+
+      </div>
+      <br>
               <div class="col-4">
-                <h4>Choisis un jeu et un ami</h4>
                 <form action="/choice" method="POST">
-                  <input class="form-control" name="game" type="text" placeholder="Tapes le nom du jeu"><br>
+                  <input class="form-control" name="game" type="hidden" id="input_jeux" placeholder="Tapes le nom du jeu" value=""><br>
                   <input class="form-control" name="friend" type="hidden" id="input_pseudos" placeholder="Tapes le pseudo de ton ami" value=""><br>
                   <button type="submit" class="btn btn-sample btn-secondary">Valider</button>
                 </form>
               </div>
 
 
-          </div>
+
 
         </div>
     </div>
 
 <script type="text/javascript">
-for(var i=0; i<document.getElementsByTagName('li').length; i++) {
+for(var i=0; i<document.getElementsByClassName('call').length; i++) {
 
-   document.getElementsByTagName('li')[i].addEventListener("click",
+   document.getElementsByClassName('call')[i].addEventListener("click",
      function(){
         nom = this.textContent;
         btn = document.getElementById('input_pseudos');
@@ -127,7 +137,18 @@ for(var i=0; i<document.getElementsByTagName('li').length; i++) {
         this.style.backgroundColor = "#C3C3E6";
      }
    );
+};
 
+for(var i=0; i<document.getElementsByTagName('li').length; i++) {
+
+   document.getElementsByTagName('li')[i].addEventListener("click",
+     function(){
+        nom = this.textContent;
+        btn = document.getElementById('input_pseudos');
+        btn.value = nom;
+        this.style.border = "5px solid #C3C3E6";
+     }
+   );
 };
 </script>
 

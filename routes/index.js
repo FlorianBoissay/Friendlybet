@@ -5,9 +5,9 @@ var mongoose= require('mongoose');
 
 var dataGame = [
   {name: "FIFA18", url: "/images/fifa18-back.jpg"},
-  {name: "CALL OF DUTY", url: "/images/callofduty-back.jpg"},
+  {name: "CALL OF DUTY WW2", url: "/images/callofduty-back.jpg"},
   {name: "NBA 2K18", url: "/images/nba.jpg"},
-  {name: "NEED FOR SPEED", url: "/images/needforspeed.jpg"},
+  {name: "NEED FOR SPEED PAYBACK", url: "/images/needforspeed.jpg"},
 ];
 
 var dataPrice = [
@@ -147,7 +147,7 @@ router.post('/connexion', function(req, res, next) {
       function (err, users) {
         if(users.length > 0) {
           req.session.user = users[0];
-          res.render('dashboard', { dataGame: dataGame, user : req.session.user, dataFriend: dataFriend });
+          res.render('dashboard', { dataGame, user : req.session.user, dataFriend});
         } else {
           res.render('connexion');
         }
@@ -157,10 +157,10 @@ router.post('/connexion', function(req, res, next) {
 });
 
 router.post('/choice', function(req, res, next){
-  gameSelected = req.body.game,
-  friendSelected = req.body.friend;
+  var gameSelected = req.body.game;
+  var friendSelected = req.body.friend;
 
-  res.render('miser', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend});
+  res.render('miser', {user: req.session.user, dataGame, gameSelected, friendSelected});
 });
 
 // Routes pour les mises vers le panier
