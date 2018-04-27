@@ -96,3 +96,7 @@ color: #B3001B;
 background-color: #ffffff;
 }
 /*** Fin Customisation bouton bootstrap ***/
+
+li {
+  background-color: white;
+}

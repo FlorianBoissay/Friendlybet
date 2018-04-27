@@ -71,6 +71,7 @@
 
         <div class="container">
 
+<<<<<<< HEAD
 
           <div class="row list-game">
             <img src="/images/fifa18-back.jpg" class=" img-game img-fluid" alt="">
@@ -80,6 +81,8 @@
           </div><br>
 
 
+=======
+>>>>>>> 5d4a63ecb6b51e88a972c2a7e933bfe36063e0de
           <div class="row">
 
             <div class="col-6" id="players">
@@ -89,7 +92,7 @@
               for(var i=0; i<dataFriend.length; i++) {
               %>
               <ul class="list-group">
-                <li class="list-group-item"><%=dataFriend[i].name%></li>
+                <li class="list-group-item call"><%=dataFriend[i].name%></li>
               </ul>
 
               <%
@@ -102,7 +105,7 @@
                 <h4>Choisis un jeu et un ami</h4>
                 <form action="/choice" method="POST">
                   <input class="form-control" name="game" type="text" placeholder="Tapes le nom du jeu"><br>
-                  <input class="form-control" name="friend" type="text" placeholder="Tapes le pseudo de ton ami"><br>
+                  <input class="form-control" name="friend" type="hidden" id="input_pseudos" placeholder="Tapes le pseudo de ton ami" value=""><br>
                   <button type="submit" class="btn btn-sample btn-secondary">Valider</button>
                 </form>
               </div>
@@ -113,7 +116,23 @@
         </div>
     </div>
 
+<script type="text/javascript">
+for(var i=0; i<document.getElementsByTagName('li').length; i++) {
 
+   document.getElementsByTagName('li')[i].addEventListener("click",
+     function(){
+        nom = this.textContent;
+        btn = document.getElementById('input_pseudos');
+        btn.value = nom;
+        this.style.backgroundColor = "#C3C3E6";
+     }
+   );
 
+};
+</script>
+
+<script src="javascripts/script.js" type="text/javascript">
+
+</script>
   </body>
 </html>

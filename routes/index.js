@@ -21,9 +21,6 @@ var dataPrice = [
 
 var dataFriend =[
   {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"},
-  {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"},
-  {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"},
-  {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"}
 ];
 
 
@@ -121,7 +118,6 @@ var newUser = new UserModel ({
       console.log(user);
 
       console.log(err);
-
       if(user.length>0){
         newUser.save(
           function (error, user) {
@@ -197,5 +193,6 @@ router.post('/mise50', function (req, res, next){
   montant = req.body.cinquante;
   res.render('panier', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend, montant: montant});
 });
+
 
 module.exports = router;
