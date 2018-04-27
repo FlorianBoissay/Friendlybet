@@ -5,6 +5,7 @@ body{
 /* Homepage */
 .container-fluid {
   padding: 0px;
+font-family: 'Do Hyeon', sans-serif;
 }
 
 /* Barre navigation */
@@ -39,7 +40,7 @@ body{
 }
 
 .form-control{
-  border-color: #b3001b;
+ border-color: #b3001b;
 }
 
 .input-group-text{

@@ -1,5 +1,8 @@
 /***** Dashboard *****/
    /*** Barre ***/
+.container-fluid {
+  padding: 0px;
+}
 
 .nav{
   background-color: #0072bb;
