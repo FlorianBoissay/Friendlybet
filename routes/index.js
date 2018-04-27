@@ -21,9 +21,6 @@ var dataPrice = [
 
 var dataFriend =[
   {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"},
-  {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"},
-  {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"},
-  {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"}
 ];
 
 
@@ -119,10 +116,8 @@ var newUser = new UserModel ({
     {},
     function(err, user){
       console.log(user);
-<<<<<<< HEAD
-=======
+
       console.log(err);
->>>>>>> db7385e22e533f15c4b34942de9fe89b15dda72c
       if(user.length>0){
         newUser.save(
           function (error, user) {
@@ -144,10 +139,7 @@ var newUser = new UserModel ({
     }
   );
 });
-<<<<<<< HEAD
 
-=======
->>>>>>> db7385e22e533f15c4b34942de9fe89b15dda72c
 router.post('/connexion', function(req, res, next) {
 
   UserModel.find(
