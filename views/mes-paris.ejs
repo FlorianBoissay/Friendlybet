@@ -21,14 +21,31 @@
        <a class="nav-link" href="/connexion">Déconnexion</a>
      </li>
    </ul>
+   <br>
 
-   <div class="container">
-    <h5>friendSelected a répondu favorablement à ton invitation.</h5>
+   <div class="text-center" id="mes-paris">
+    Mes paris
+   </div>
+   <br>
 
-    <form action="/partie" method="POST">
-      <input type="hidden" name="partie" id="">
-      <button type="submit" name="button">Commencer la partie</button>
-    </form>
+   <div class="container col-6">
+     <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <%=friendSelected%> a répondu favorablement à ton invitation.
+        <form action="/partie" method="POST">
+          <input type="hidden" name="partie" id="">
+          <button class="btn btn-sample btn-sm">Jouer</button>
+        </form>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Paris gagnés
+        <span class="badge badge-primary badge-pill">2</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Paris perdus
+        <span class="badge badge-primary badge-pill">1</span>
+      </li>
+    </ul>
 
    </div>
 

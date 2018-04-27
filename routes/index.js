@@ -21,14 +21,7 @@ var dataPrice = [
 
 var dataFriend =[
   {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"},
-  {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"},
-  {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"},
-  {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"}
-];
-
-
-
-
+]
 
 /* GET home page. */
 
@@ -36,10 +29,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/miser', function(req, res, next) {
-  res.render('miser', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
-});
-
+// router.get('/miser', function(req, res, next) {
+//   res.render('miser', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
+// });
+//
 router.get('/inscription', function(req, res, next) {
   res.render('inscription', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
 });
@@ -54,25 +47,25 @@ router.get('/connexion', function(req, res, next) {
 // });
 
 /*partie page. */
-router.get('/partie', function(req, res, next) {
-  res.render('partie', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
-});
-
-router.get('/envoiphoto', function(req, res, next) {
-  res.render('envoiphoto', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
-});
-
-router.get('/recap', function(req, res, next) {
-  res.render('recap', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
-});
-
-router.get('/dashboard', function(req, res, next) {
-  res.render('dashboard', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
-});
-
-router.get('/panier', function(req, res, next) {
-  res.render('panier', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
-});
+// router.get('/partie', function(req, res, next) {
+//   res.render('partie', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
+// });
+//
+// router.get('/envoiphoto', function(req, res, next) {
+//   res.render('envoiphoto', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
+// });
+//
+// router.get('/recap', function(req, res, next) {
+//   res.render('recap', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
+// });
+//
+// router.get('/dashboard', function(req, res, next) {
+//   res.render('dashboard', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
+// });
+//
+// router.get('/panier', function(req, res, next) {
+//   res.render('panier', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend})
+// });
 
 router.post('/upload', function(req, res) {
   if (!req.files)
@@ -119,10 +112,8 @@ var newUser = new UserModel ({
     {},
     function(err, user){
       console.log(user);
-<<<<<<< HEAD
-=======
       console.log(err);
->>>>>>> db7385e22e533f15c4b34942de9fe89b15dda72c
+
       if(user.length>0){
         newUser.save(
           function (error, user) {
@@ -144,10 +135,7 @@ var newUser = new UserModel ({
     }
   );
 });
-<<<<<<< HEAD
 
-=======
->>>>>>> db7385e22e533f15c4b34942de9fe89b15dda72c
 router.post('/connexion', function(req, res, next) {
 
   UserModel.find(
@@ -202,6 +190,7 @@ router.post('/mise50', function (req, res, next){
   res.render('panier', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend, montant: montant});
 });
 
+// Route du paiement vers la page d attente
 router.post('/paiement', function (req, res, next){
   res.render('attente', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend, montant: montant});
 });
@@ -210,12 +199,22 @@ router.get('/attente', function(req, res, next) {
   res.render('dashboard', {dataGame: dataGame, dataFriend: dataFriend, user: req.session.user, montant: montant});
 });
 
+// Route vers la page mes paris
 router.get('/mes-paris', function(req, res, next){
   res.render('mes-paris', {dataGame: dataGame, dataFriend: dataFriend, user: req.session.user, friendSelected: req.body.friend, montant: montant});
 });
-
+// Route vers le resultat et envoi de photo
 router.post('/partie', function(req, res, next){
-    res.render('partie', {dataGame: dataGame, dataFriend: dataFriend, user: req.session.user, friendSelected: req.body.friend, montant: montant});
+  res.render('envoiphoto', {dataGame: dataGame, dataFriend: dataFriend, user: req.session.user, friendSelected: req.body.friend, montant: montant});
 });
 
+// Route vers le recap
+router.post('/resultat', function(req, res, next){
+  res.render('recap', {dataGame: dataGame, dataFriend: dataFriend, user: req.session.user, friendSelected: req.body.friend, montant: montant});
+});
+
+// Route vers le dashboard quand tout est fini
+router.get('/recap', function(req, res, nex){
+  res.render('dashboard', {dataGame: dataGame, dataFriend: dataFriend, user: req.session.user, friendSelected: req.body.friend, montant: montant});
+});
 module.exports = router;

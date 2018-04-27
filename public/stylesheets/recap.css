@@ -1,5 +1,16 @@
 /* Récapitulatif résultat */
-.pictonavbar {
+.nav{
+  background-color: #0072bb;
+  color: #FFFFFF;
+}
+.nav-link{
+  color: #FFFFFF;
+}
+.nav-link :hover{
+  color : #FFFFFF;
+  font-weight: bolder;
+}
+#picto-user{
   width: 20px;
 }
 
@@ -37,10 +48,30 @@
   margin-bottom: 50px;
 }
 
-.userrecap {
+.userphoto{
   background-color: #E8EAF6;
   font-size: 30px;
-  padding: 15px 100px 15px 100px;
+  padding: 40px 40px 15px 40px;
+  margin-left: 0px;
+  border-radius: 4px;
+}
+
+.scorephoto {
+  margin: 10px;
+  font-size: 40px;
+  border: 1px #468CC8 solid;
+  padding: 0px 20px 0px 20px;
+  color: #468CC8;
+  border-radius: 4px;
+}
+
+.userrecap {
+  background-color: #E8EAF6;
+  font-size: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px ;
+  padding-left: 50px ;
+  padding-right: 50px ;
   margin-right: 50px;
 }
 

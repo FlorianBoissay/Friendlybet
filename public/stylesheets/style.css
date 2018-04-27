@@ -237,3 +237,10 @@ h5{
 .btn-light {
   padding: 50px;
 }
+
+/*** Mes paris ***/
+#mes-paris{
+  color: #b3001b;
+  font-size: 30px;
+  text-align: center;
+}
