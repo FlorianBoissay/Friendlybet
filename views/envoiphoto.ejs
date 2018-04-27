@@ -10,33 +10,43 @@
     <link rel="stylesheet" href="/stylesheets/envoiphoto.css">
   </head>
   <body>
-    <nav class="navbar navbar-custom navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">Accueil</a>
 
-      <div class="collapse navbar-collapse">
-        <div id="navbarleft" class="navbar-nav">
-          <a href="/dashboard" id="pictophoto" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"><img class="pictonavbar" src="/images/user.svg"></a>
-          <a href="/connexion" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Déconnexion</a>
-        </div>
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link active" href="/"><img src="/images/user.svg" id="picto-user"></a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/connexion">Déconnexion</a>
+        </li>
+    </ul>
+    <br>
+    <br>
+    <div class="container text-center">
+      <div id="fin">
+        Fin de partie
       </div>
-    </nav>
+      <br>
+      <div class="text-center">
+        <span class="badge badge-secondary"><%=gameSelected%></span>
+        <span class="badge badge-secondary"><%=user.console%></span>
+      </div>
 
+      <div class="row divphoto">
+        <span class="userphoto"><%=user.pseudo%></span>
+        <span class="scorephoto">0</span>
+        <span class="scorephoto">0</span>
+        <span class="userphoto"><%=friendSelected%></span>
+      </div>
+      <br>
+      <br>
 
-    <div id="fin">
-      Fin de partie
+      <form action="/resultat" method="post">
+        <input type="hidden" name="resultat" value="">
+        <button id="btn-continuer" type="submit" class="btn btn-sample btn-danger">Continuer</button>
+      </form>
+
     </div>
 
-    <div class="row divphoto">
-      <span id="jeuphoto">Fifa 18</span>
-      <span id="consolephoto">PS4</span>
-    </div>
-
-    <div class="row divphoto">
-      <span id="userphoto1">UserName</span>
-      <span id="scorephoto">0</span>
-      <span id="scorephoto">0</span>
-      <span id="userphoto2">UserName</span>
-    </div>
 
     <!-- <form ref='uploadForm'
       id='formphoto'
@@ -47,6 +57,6 @@
         <input type='submit' value='Upload!' />
     </form> -->
 
-    <a href="/recap"><button id="btnphoto" type="button" class="btn btn-danger">Continuer</button></a>
+
   </body>
 </html>

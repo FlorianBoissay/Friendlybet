@@ -2,23 +2,23 @@ body{
 font-family: 'Do Hyeon', sans-serif;
 }
 /* Envoi Photo */
-.pictonavbar {
+.nav{
+  background-color: #0072bb;
+  color: #FFFFFF;
+}
+.nav-link{
+  color: #FFFFFF;
+}
+.nav-link :hover{
+  color : #FFFFFF;
+  font-weight: bolder;
+}
+#picto-user{
   width: 20px;
-}
-
-nav {
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-}
-
-#navbarleft {
-  float: right;
 }
 
 #pictophoto {
   margin-right: 30px;
-
 }
 
 .divphoto {
@@ -65,24 +65,23 @@ nav {
   text-align: center;
 }
 
-#userphoto1 {
+.userphoto{
   background-color: #E8EAF6;
   font-size: 30px;
-  padding: 15px 100px 15px 100px;
-  margin-left: 100px;
+  padding: 40px 40px 15px 40px;
+  margin-left: 0px;
+  border-radius: 4px;
 }
 
-#userphoto2 {
-  background-color: #E8EAF6;
-  font-size: 30px;
-  padding: 15px 100px 15px 100px;
-  margin-right: 100px;
-}
-
-#scorephoto {
+.scorephoto {
   margin: 10px;
-  font-size: 60px;
+  font-size: 40px;
   border: 1px #468CC8 solid;
-  padding: 5px 20px 5px 20px;
+  padding: 0px 20px 0px 20px;
   color: #468CC8;
+  border-radius: 4px;
+}
+
+#btn-continuer{
+
 }

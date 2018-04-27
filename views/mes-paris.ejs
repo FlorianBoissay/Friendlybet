@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
     <script src="https://use.fontawesome.com/a7ec7986bf.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -22,32 +21,34 @@
        <a class="nav-link" href="/connexion">Déconnexion</a>
      </li>
    </ul>
+   <br>
 
-    <div class="container">
+   <div class="text-center" id="mes-paris">
+    Mes paris
+   </div>
+   <br>
 
-      <div class="text-center" id="infos">
-        <h5>Votre mise de <%=montant%> € a bien été prise en compte.</h5>
-        <br>
-        <p>Un mail à été envoyé à <%=friendSelected%> pour accepter ou refuser votre challenge.</p>
-        <p>Vous recevrez un mail et une notification pour continuer à jouer avec Baptiste69</p>
-      </div>
+   <div class="container col-6">
+     <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <%=friendSelected%> a répondu favorablement à ton invitation.
+        <form action="/partie" method="POST">
+          <input type="hidden" name="partie" id="">
+          <button class="btn btn-sample btn-sm">Jouer</button>
+        </form>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Paris gagnés
+        <span class="badge badge-primary badge-pill">2</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Paris perdus
+        <span class="badge badge-primary badge-pill">1</span>
+      </li>
+    </ul>
 
-  <!-- <div class="text-center" id="btn-concept">
-    <a href="/"><button type="button"  class="btn btn-sample btn-primary btn-lg">Revenir à l'acceuil</button></a>
-  </div> -->
+   </div>
 
-    <div class="text-center">
-      <a href="/dashboard" type="button" class="btn btn-sample btn-primary btn-lg">Mon compte</a>
-    </div>
-    <br>
 
-    <div class="text-center" id="video">
-    	<object>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/VpvHk6sHAOY"
-         frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    	</object>
-    </div>
-
-    </div>
   </body>
 </html>
