@@ -1,5 +1,11 @@
 /***** Dashboard *****/
+body{
+font-family: 'Do Hyeon', sans-serif;
+background-color: #F0FFFF;
+}
+
    /*** Barre ***/
+
 .container-fluid {
   padding: 0px;
 }
