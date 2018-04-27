@@ -190,4 +190,5 @@ router.post('/mise50', function (req, res, next){
   res.render('panier', {user: req.session.user, gameSelected: req.body.game, friendSelected: req.body.friend, montant: montant});
 });
 
+
 module.exports = router;
