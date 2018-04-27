@@ -1,11 +1,10 @@
 body{
-  margin: 0;
+  font-family: 'Do Hyeon', sans-serif;
 }
 
 /* Homepage */
 .container-fluid {
   padding: 0px;
-font-family: 'Do Hyeon', sans-serif;
 }
 
 /* Barre navigation */
@@ -160,7 +159,7 @@ opacity: 1;
 
 /**** Contact ****/
 
-.contact{
+#contact{
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -168,7 +167,7 @@ opacity: 1;
   /* align-items: center; */
 }
 
-.contact h2 {
+#contact h2 {
   text-align: center;
 }
 
@@ -185,6 +184,12 @@ opacity: 1;
 }
 
 /*** Footer ***/
+.footer-block{
+  background-color: #0072bb;
+  margin-bottom: 0;
+  color: white;
+  text-align: center;
+}
 .footer{
   height: 30vh;
   background-color: #0072bb;
@@ -194,6 +199,16 @@ opacity: 1;
   justify-content: space-around;
   align-items: center;
 }
+.footer a{
+  height: 30vh;
+  background-color: #0072bb;
+  color: white;
+  text-align: center;
+
+  justify-content: space-around;
+  align-items: center;
+}
+
 /*** Miser ***/
 #montant-pari {
   color: #b3001b;

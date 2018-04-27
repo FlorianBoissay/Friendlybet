@@ -222,4 +222,5 @@ router.post('/resultat', function(req, res, next){
 router.get('/recap', function(req, res, nex){
   res.render('dashboard', {dataGame: dataGame, dataFriend: dataFriend, user: req.session.user, friendSelected: req.body.friend, montant: montant});
 });
+
 module.exports = router;
