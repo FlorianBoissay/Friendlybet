@@ -20,7 +20,7 @@ var dataPrice = [
 ];
 
 var dataFriend =[
-  {name:"PMR94"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"},
+  {name:"PMR94"}, {name:"Cedric-le-Vert"}, {name:"Baptiste69"}, {name: "CR7"}, {name: "Leo Messi"}, {name:"Ronaldinho"},
 ]
 
 var dataNews = [
