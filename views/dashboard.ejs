@@ -81,8 +81,8 @@
 
           <div class="row">
 
-            <div class="col-6" id="players">
-              <div class="picto-align"><img src="/images/friends.svg" class="picto-items"><h4>Amis</h4></div>
+            <div class="col-6" >
+              <div id="players"><img src="/images/friends.svg" class="picto-items"><h4>Amis</h4></div>
 
               <%
               for(let i=0; i<dataFriend.length; i++) {
@@ -112,7 +112,7 @@
 
       </div>
       <br>
-              <div class="col-4">
+              <div class="col-4 btn-valider">
                 <form action="/choice" method="POST">
                   <input class="form-control" name="game" type="hidden" id="input_jeux" placeholder="Tapes le nom du jeu" value=""><br>
                   <input class="form-control" name="friend" type="hidden" id="input_pseudos" placeholder="Tapes le pseudo de ton ami" value=""><br>

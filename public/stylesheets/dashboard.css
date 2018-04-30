@@ -62,7 +62,7 @@ background-color: #F0FFFF;
 
 .picto-items{
   width: 32px;
-  vertical-align: middle;
+
 }
 /*** Customisation du bouton bootstrap ***/
 .btn-sample {
@@ -111,7 +111,9 @@ color: #B3001B;
 background-color: #ffffff;
 }
 /*** Fin Customisation bouton bootstrap ***/
-
+#btn-valider{
+  text-align: center;
+}
 li {
   background-color: white;
 }
