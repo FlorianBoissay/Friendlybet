@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Voici ta mise!</title>
+    <title>Panier</title>
     <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -13,6 +13,7 @@
   </head>
   <body>
     <div class="container-fluid">
+
       <ul class="nav justify-content-end">
         <li class="nav-item">
           <a class="nav-link" href="/dashboard"><%=user.pseudo%></a>
@@ -25,41 +26,46 @@
         </li>
       </ul>
 
-      <div id="resume">
-        Récapitulatif de votre mise
-      </div>
-
-      <div class="panier">
-        <span class="badge badge-secondary"><%=gameSelected%></span>
-        <span class="badge badge-secondary"><%=user.console%></span>
-      </div><br>
       <div class="row">
-        <div class="card col-4">
-          <div class="card-body">
-            <%=user.pseudo%>
+        <div class="col-12">
+          <div class="text-center" id="recap-mise">
+            Récapitulatif de la mise
           </div>
-        </div>
-        <div class="col-3">
-          <h3>VS</h3>
-        </div>
-        <div class="card col-4">
-          <div class="card-body">
-            <%=friendSelected%>
+
+          <div class="text-center">
+            <span class="badge badge-secondary">FIFA 18</span>
+            <span class="badge badge-secondary"><%=user.console%></span>
           </div>
         </div>
       </div>
 
-<p class="text-center" id="resumemise">Votre mise est de <%=montant%> €.</p>
-<br>
-
-<p class="text-center" id"confirmation">Pour confirmer votre choix, cliquer sur le bouton ci-dessous</p>
-
-          <div id="paypal-button">
-            <form action="/paiement" method="POST">
-              <input type="hidden" name="paiement" value="">
-              <button type="submit"><img src="/images/paypal.png" style="border: 0px; width:300px; height:60px;" alt=""></button>
-            </form>
+      <div class="row" id="adversaires">
+          <div class="card offset-2 col-2 text-center">
+            <div class="card-body">
+              <%=user.pseudo%>
+            </div>
           </div>
+          <div class="col-4 text-center">
+            <h3>VS</h3>
+          </div>
+          <div class="card col-2  text-center">
+            <div class="card-body">
+              Baptiste69
+            </div>
+          </div>
+      </div>
+
+      <p class="text-center" id="resumemise" style="font-size:20px;">Votre mise est de <%=montant%> €.</p>
+
+      <div id="paiement">
+        <p class="text-center" id="confirmation" style="font-size:20px;">Pour confirmer votre choix, cliquer sur le bouton ci-dessous</p>
+        <div id="paypal-button">
+          <form action="/paiement" method="POST">
+            <input type="hidden" name="paiement" value="">
+            <button type="submit" style="border: 0px; background-color: #FFFFFF;"><img src="/images/paypal.png" style="border: 0px; width:300px; height:60px;" alt=""></button>
+          </form>
+        </div>
+      </div>
 
             <!-- <script>
               paypal.Button.render({

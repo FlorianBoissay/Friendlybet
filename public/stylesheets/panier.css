@@ -17,9 +17,16 @@ body{
   width: 20px;
 }
 
-.panier {
-  display: flex;
-  justify-content: center;
+#adversaires{
+  margin-top: 10px;
+}
+#paiement{
+  margin-top: 10px;
+}
+#recap-mise{
+  color: #b3001b;
+  font-size: 30px;
+  text-align: center;
 }
 
 #paypal-button {
@@ -31,8 +38,11 @@ body{
   color: #b3001b;
   font-size: 30px;
   text-align: center;
+  margin-top: 30px;
 }
-
+#paiement{
+  margin-top: 20px;
+}
 .text-center {
   margin-top: 50px;
   margin-bottom: 50px;

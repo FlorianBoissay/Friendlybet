@@ -20,7 +20,21 @@ font-family: 'Do Hyeon', sans-serif;
 #pictophoto {
   margin-right: 30px;
 }
-
+#recap-partie{
+  color: #b3001b;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 10px;
+}
+#games{
+  margin-top: 30px;
+}
+#adversaires{
+  margin-top: 100px;
+}
+#btn-continuer{
+  margin-top: 100px;
+}
 .divphoto {
   text-align: center;
   justify-content: space-between;

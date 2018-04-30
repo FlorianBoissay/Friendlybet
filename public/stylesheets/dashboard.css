@@ -35,9 +35,19 @@ background-color: #F0FFFF;
 #games{
   margin-top: 0px;
 }
-/* .card{
-  color: black;
-}*/
+#players{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#game-select{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.picto-items{
+  margin-right: 10px;
+}
 .img-game{
   width: 239px;
   height: 160px;
@@ -49,6 +59,11 @@ background-color: #F0FFFF;
 /* .#players p{
   overflow: auto;
 } */
+
+.picto-items{
+  width: 32px;
+  vertical-align: middle;
+}
 /*** Customisation du bouton bootstrap ***/
 .btn-sample {
 color: #ffffff;

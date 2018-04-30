@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Choisis ta mise!</title>
+    <title>Mise</title>
     <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -23,41 +23,45 @@
         <a class="nav-link" href="/connexion">Déconnexion</a>
       </li>
     </ul>
+    <br>
 
     <div class="container-fluid text-center" style="margin-right: 0px; margin-left: 0px;">
 
       <div class="row">
-        <div class="offset-1 col-10r">
-
+        <div class="col-12">
           <div class="text-center" id="montant-pari">
             Montant du pari
-          </div>
-
-          <div class="text-center">
-            <span class="badge badge-secondary"><%=gameSelected%></span>
-            <span class="badge badge-secondary"><%=user.console%></span>
           </div><br>
 
-          <div class="row">
-            <div class="card col-4  text-center">
-              <div class="card-body">
-                <%=user.pseudo%>
-              </div>
-            </div>
-            <div class="col-3 text-center">
-              <h3>VS</h3>
-            </div>
-            <div class="card col-4  text-center">
-              <div class="card-body">
-                <%=friendSelected%>
-              </div>
+          <div class="text-center">
+            <span class="badge badge-secondary">FIFA 18</span>
+            <span class="badge badge-secondary"><%=user.console%></span>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+
+      <div class="row" id="adversaires">
+          <div class="card offset-2 col-2 text-center">
+            <div class="card-body">
+              <%=user.pseudo%>
             </div>
           </div>
+          <div class="col-4 text-center">
+            <h3>VS</h3>
+          </div>
+          <div class="card col-2  text-center">
+            <div class="card-body">
+              Baptiste69
+            </div>
+          </div>
+      </div>
 
-        </div>
-      </div> <br>
 
-      <div class="row text-center">
+      <br>
+
+      <div class="row offset-4 text-center" id="btn-mises">
 
         <div class="btn-mise">
           <form action="/mise5" method="POST">
