@@ -16,6 +16,7 @@ background-color: #F0FFFF;
 }
 .nav-link{
   color: #FFFFFF;
+  background-color: #0072BB;
 }
 .nav-link :hover{
   color : #FFFFFF;
