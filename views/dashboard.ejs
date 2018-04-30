@@ -81,34 +81,34 @@
 
           <div class="row">
 
-            <div class="col-6" id="players">
-              <h4>Amis</h4>
+            <div class="col-6" >
+             <div id="players"><img src="/images/friends.svg" id="picto-items"><h4>Amis</h4></div>
 
-              <%
-              for(let i=0; i<dataFriend.length; i++) {
-              %>
-              <ul class="list-group">
-                <li class="list-group-item call"><%=dataFriend[i].name%></li>
-              </ul>
+             <%
+             for(let i=0; i<dataFriend.length; i++) {
+             %>
+             <ul class="list-group">
+               <li class="list-group-item call"><%=dataFriend[i].name%></li>
+             </ul>
 
-              <%
-              }
-              %>
+             <%
+             }
+             %>
 
-            </div>
+           </div>
 
-            <div class="col-6">
-              <h4>Jeux</h4>
-              <%
-              for(let j=0; j<dataGame.length; j++) {
-              %>
-              <ul class="list-group">
-                <li class="list-group-item game"><%=dataGame[j].name%></li>
-              </ul>
-              <%
-              }
-              %>
-            </div>
+           <div class="col-6">
+             <div id="game-select"><img src="/images/gamepad.svg" id="picto-items1"><h4>Jeux</h4></div>
+             <%
+             for(let j=0; j<dataGame.length; j++) {
+             %>
+             <ul class="list-group">
+               <li class="list-group-item game"><%=dataGame[j].name%></li>
+             </ul>
+             <%
+             }
+             %>
+           </div>
 
       </div>
       <br>

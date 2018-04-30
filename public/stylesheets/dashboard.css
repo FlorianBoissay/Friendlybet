@@ -39,14 +39,17 @@ background-color: #F0FFFF;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 }
 #game-select{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 }
-.picto-items{
+#picto-items{
   margin-right: 10px;
+  width: 25px;
 }
 .img-game{
   width: 239px;
@@ -60,9 +63,9 @@ background-color: #F0FFFF;
   overflow: auto;
 } */
 
-.picto-items{
+#picto-items1{
   width: 32px;
-
+  margin-right: 10px;
 }
 /*** Customisation du bouton bootstrap ***/
 .btn-sample {
