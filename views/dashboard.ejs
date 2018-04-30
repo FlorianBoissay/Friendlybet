@@ -131,6 +131,10 @@ for(var i=0; i<document.getElementsByClassName('call').length; i++) {
 
    document.getElementsByClassName('call')[i].addEventListener("click",
      function(){
+
+       for(var j=0; j<document.getElementsByClassName('call').length; j++) {
+         document.getElementsByClassName('call')[j].style.backgroundColor = "#FFFFFF"
+       }
         nom = this.textContent;
         btn = document.getElementById('input_pseudos');
         btn.value = nom;
@@ -139,17 +143,21 @@ for(var i=0; i<document.getElementsByClassName('call').length; i++) {
    );
 };
 
-for(var i=0; i<document.getElementsByTagName('li').length; i++) {
+for(var i=0; i<document.getElementsByClassName('game').length; i++) {
 
-   document.getElementsByTagName('li')[i].addEventListener("click",
+   document.getElementsByClassName('game')[i].addEventListener("click",
      function(){
-        nom = this.textContent;
-        btn = document.getElementById('input_pseudos');
-        btn.value = nom;
-        this.style.border = "5px solid #C3C3E6";
-     }
-   );
-};
+
+      for(var j=0; j<document.getElementsByClassName('game').length; j++) {
+        document.getElementsByClassName('game')[j].style.backgroundColor = "#FFFFFF"
+      }
+              nom = this.textContent;
+              btn = document.getElementById('input_jeux');
+              btn.value = nom;
+              this.style.backgroundColor = "#C3C3E6";
+
+      }
+  )};
 </script>
 
 <script src="javascripts/script.js" type="text/javascript">
